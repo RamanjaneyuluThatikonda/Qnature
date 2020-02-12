@@ -1,0 +1,215 @@
+<!-- <div class="formcontainer">
+  <div class="formbody">
+
+<form #empForm='ngForm' (ngSubmit)='empForm.valid && login(empForm)'>
+    <div class="header">Login</div>
+ 
+
+
+  <input type ="email"#email="ngModel"  name="email" [(ngModel)]="user.email"  placeholder="Email"
+  required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :empForm.submitted && !email.valid }">
+<div *ngIf="empForm.submitted && email.errors ">
+  <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+  <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+  </div>
+<div class="alert" *ngIf="serverErrorMessagesEmail">
+  {{serverErrorMessagesEmail}}
+</div>
+
+  <input type ="password" #password="ngModel"  name="password" [(ngModel)]="user.password"  placeholder="password"
+  required  [ngClass]="{'invalid-textbox' :empForm.submitted && !password.valid }">
+  <div *ngIf="empForm.submitted && !password.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+  <div class="alert" *ngIf="serverErrorMessagesPassword"  >
+    {{serverErrorMessagesPassword}}
+  </div>
+
+
+  <div style="margin-top:20px;">
+      <input type="submit" value="Submit">
+  
+        <button class="form-btn-hollow" (click)="movetoregister()">Register</button>
+</div>
+</form>
+
+</div>
+</div>
+ -->
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="" style="margin-left:100px">
+  
+  <a class="navbar-brand" href="#" >
+ 
+  <img src="https://img.icons8.com/color/38/000000/align-justify.png">
+ 
+  <img src="logo.png" width="140" height="42" >
+  </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+<img src="https://img.icons8.com/pastel-glyph/44/000000/home.png" class="mr-sm-5">
+      
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login | Register</button>
+    </form>
+  </div>
+</nav> -->
+<style>
+  .module {
+    background: 
+      linear-gradient(
+        
+        rgba(253, 250, 250, 0.6),
+        
+        rgba(245, 236, 236, 0.6)
+        /*rgba(0, 0, 0, 0.6)*/
+      ),
+      url("../../assets/bgimg.jpg");
+      /* background-image: url("../../assets/bgimg.jpg"); */
+    background-size: cover;
+    width: 100%;
+    /* height: 550px; */
+    /*margin: 10px 0 0 10px;*/
+    position: relative;
+    /*transform: translate(-50%, -50%);*/
+    /*float: left;*/
+  }
+  
+  .top .row h1 {
+    color: black;
+    /*margin: 0;
+    padding: 20px;*/
+  }
+</style>
+
+<app-navbar></app-navbar>
+<!-- <div style="background-color: #ffffff;box-shadow: 5px 5px 5px #aaaaaa;">
+  <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    
+    <img src="https://img.icons8.com/ios/20/000000/align-justify.png" class="mr-sm-3">
+    <a class="navbar-brand" href="#">
+      <img src="../../assets/logo.png" width="190">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <img src="https://img.icons8.com/ios/20/000000/dog-house.png" class="mr-sm-3">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="movetologin()">Login | Sign Up</button>
+      </form>
+    </div>
+    </nav>
+    </div>
+  </div> -->
+
+<div class="module top">  
+<div class="container">
+
+<div class="col-6" style="margin-left:265px;">
+<br><br>
+<h3 class="text-center" style="font-weight: bold;">Please Login to QNature</h3>
+<br><br>
+
+<form #empForm='ngForm' (ngSubmit)='empForm.valid && login(empForm)'>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Mobile Number/Email ID</label>
+
+    <input type ="email"#email="ngModel"  name="email" [(ngModel)]="user.email"  placeholder="Mobile Number/Email ID"
+  required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :empForm.submitted && !email.valid }" class="form-control" style="height: 40px;">
+  <div *ngIf="empForm.submitted && email.errors ">
+    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+  </div>
+  <div class="alert" *ngIf="serverErrorMessagesEmail">
+    {{serverErrorMessagesEmail}}
+  </div>
+
+    <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mobile Number/Email ID"> -->
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+
+    <input type ="password" #password="ngModel"  name="password" [(ngModel)]="user.password"  placeholder="password"
+  required  [ngClass]="{'invalid-textbox' :empForm.submitted && !password.valid }" class="form-control" style="height: 40px;">
+  <div *ngIf="empForm.submitted && !password.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+  <div class="alert" *ngIf="serverErrorMessagesPassword"  >
+    {{serverErrorMessagesPassword}}
+  </div>
+
+    <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+  </div>
+
+
+<div class="row">
+    <div class="col-sm-8">
+      <div class="custom-control-lg custom-control custom-checkbox">
+        <input class="custom-control-input" id="checkbox-large" type="checkbox"/>
+        <label class="custom-control-label" for="checkbox-large">
+          Remember me
+        </label>
+    </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="float-right">
+        <a href="#" style="color: #177996;">Forget Password?</a>
+    </div>
+    </div>
+</div>
+
+ <br>
+  <input type="submit" value="Login" class="btn col-sm-12" style="background-color: #177996;color: blanchedalmond;font-size: 20px;height: 40px;">
+  <!-- <button type="submit" class="btn btn-primary col-sm-12" style="background-color: #177996;">Login</button> -->
+</form>
+
+
+
+<div class="row">
+    <div class="col-sm-8">
+    <img src="https://img.icons8.com/cute-clipart/20/000000/facebook-new.png">
+    <a href="#">Login with Facebook</a>
+    </div>
+    <div class="col-sm-4">
+    <img src="https://img.icons8.com/cute-clipart/20/000000/google-logo.png">
+    <a href="#" style="color: red;">Login with Google</a>
+    </div>
+</div>
+
+</div>
+</div>
+
+<br><br>
+    <div class="">
+      <p class="text-center">New to QNature? <a routerLink="/register">Sign Up</a></p>
+      <br>
+      <div class="container">
+        <div class="" style="margin-left: 430px;">
+          <img src="../../assets/playstore.png" class="rounded mx-auto mr-sm-2" alt="..." style="width: 140px;"> 
+          <img src="../../assets/applystore.png" class="rounded mx-auto" alt="..." style="width: 120px;">
+        </div>
+      </div>
+    </div>
+<br><br>
+    
+
+</div>
+
+<app-footer></app-footer>

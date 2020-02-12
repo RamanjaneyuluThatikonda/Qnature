@@ -1,0 +1,194 @@
+<!-- <div class="formcontainer">
+  <div class="formbody">
+
+      <form #empForm='ngForm' (ngSubmit)='empForm.valid && register(empForm)'>
+          <div class="header">Register</div>
+
+            <input type ="text" #name="ngModel" name="name" [(ngModel)]="user.name" placeholder="Name"
+            required  [ngClass]="{'invalid-textbox' :empForm.submitted && !name.valid }" class="form-control">
+            <div *ngIf="empForm.submitted && !name.valid">
+              <label class="validation-message">This field is required.</label>
+            </div>
+
+        
+            <input type ="email"  #email="ngModel" name="email" [(ngModel)]="user.email"  placeholder="Email"
+            required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :empForm.submitted && !email.valid }" class="form-control">
+            <div *ngIf="empForm.submitted && email.errors ">
+              <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+              <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+            </div>
+            <div class="alert" *ngIf="serverErrorMessagesDE">
+              {{serverErrorMessagesDE}}
+            </div>
+
+            <input type ="password"  #password="ngModel" name="password" [(ngModel)]="user.password"  placeholder="password"
+            required  [ngClass]="{'invalid-textbox' :empForm.submitted && !password.valid }" class="form-control">
+            <div *ngIf="empForm.submitted && !password.valid">
+              <label class="validation-message">This field is required.</label>
+            </div>
+
+            <input type ="password"  #confirmpassword="ngModel" name="confirmpassword" [(ngModel)]="user.confirmpassword"  placeholder="confirmpassword"
+            required  [ngClass]="{'invalid-textbox' :empForm.submitted && !confirmpassword.valid }" class="form-control">
+            <div *ngIf="empForm.submitted && !confirmpassword.valid">
+              <label class="validation-message">This field is required.</label>
+            </div>
+            <div class="alert" *ngIf="serverErrorMessagesPN">
+              {{serverErrorMessagesPN}}
+            </div>
+
+            <div>
+              <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+            </div>
+
+            <div style="margin-top:20px;">
+                <input type="submit" value="Submit">
+                <button class="form-btn-hollow" (click)="movetologin()">Login</button>
+            </div>
+      </form>
+  </div>
+</div>
+ -->
+
+
+
+<style>
+  .module {
+    background: 
+      linear-gradient(
+        rgba(253, 250, 250, 0.6),
+        rgba(245, 236, 236, 0.6)
+      ),
+      url("../../assets/bgimg.jpg");
+    background-size: cover;
+    width: 100%;
+    /* height: 750px; */
+    position: relative;
+  }
+  .top .row h1 {
+    color: black;
+  }
+</style>
+
+<app-navbar></app-navbar>
+
+   
+  <div class="module top">
+    <div class="container" style="padding: 70px;">
+      <h2 class="text-center">Sign Up</h2>
+      <p class="text-center">QNature account is free for new users for the first 6 months</p>
+
+      <form #empForm='ngForm' (ngSubmit)='empForm.valid && register(empForm)'>
+        <div class="row">
+          <div class="col">
+                  <label for="">First Name</label>
+                  <input type ="text" #name="ngModel" name="name" [(ngModel)]="user.name"
+                  required  [ngClass]="{'invalid-textbox' :empForm.submitted && !name.valid }" class="form-control">
+                  <div *ngIf="empForm.submitted && !name.valid">
+                    <label class="validation-message">This field is required.</label>
+                  </div>
+          </div>
+          <div class="col">
+                  <label for="">Last Name</label>
+                  <input type ="text" #role="ngModel" name="role" [(ngModel)]="user.role"
+                  required  [ngClass]="{'invalid-textbox' :empForm.submitted && !role.valid }" class="form-control">
+                  <div *ngIf="empForm.submitted && !role.valid">
+                    <label class="validation-message">This field is required.</label>
+                  </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                  <label for="">Contact Number</label>
+                  <input type ="number"  #phone="ngModel" name="phone" [(ngModel)]="user.phone"
+                  required  [ngClass]="{'invalid-textbox' :empForm.submitted && !phone.valid }" class="form-control">
+                  <div *ngIf="empForm.submitted && !phone.valid">
+                    <label class="validation-message">This field is required.</label>
+                  </div>
+          </div>
+          <div class="col">
+                  <label for="">Email</label>
+                  <input type ="email"  #email="ngModel" name="email" [(ngModel)]="user.email" required 
+                  [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :empForm.submitted && !email.valid }" class="form-control">
+                  <div *ngIf="empForm.submitted && email.errors ">
+                    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+                    <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+                  </div>
+                  <div class="alert" *ngIf="serverErrorMessagesDE">
+                    {{serverErrorMessagesDE}}
+                  </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                  <label for="">Choose Password</label>
+                  <input type ="password"  #password="ngModel" name="password" [(ngModel)]="user.password"
+                  required  [ngClass]="{'invalid-textbox' :empForm.submitted && !password.valid }" class="form-control" minlength="3">
+                  <div *ngIf="empForm.submitted && !password.valid">
+                    <label class="validation-message">This field is required.</label>
+                  </div>
+          </div>
+          <div class="col">
+                  <label for="">Re-enter Password</label>
+                  <input type ="password"  #confirmpassword="ngModel" name="confirmpassword" [(ngModel)]="user.confirmpassword"
+                  required  [ngClass]="{'invalid-textbox' :empForm.submitted && !confirmpassword.valid }" class="form-control">
+                  <div *ngIf="empForm.submitted && !confirmpassword.valid">
+                    <label class="validation-message">This field is required.</label>
+                  </div>
+                  <div class="alert" *ngIf="serverErrorMessagesPN">
+                    {{serverErrorMessagesPN}}
+                  </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                  <label for="">Image Upload</label>
+                  <div class="form-group">
+                    <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+                  </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                  <p style="font-weight: bold;">I am a (Check all that is applicable)</p>
+                  <div class="form-group">
+                    <input type="checkbox" >
+                    <label for="Practitioner">Practitioner</label><br>
+                    <input type="checkbox">
+                    <label for="Health">Health Syore Owner</label>
+                  </div>
+          </div>
+          <div class="col">
+                  <br><br>
+                  <div class="form-group">
+                    <input type="checkbox" >
+                    <label for="">Institution / College</label><br>
+                    <input type="checkbox">
+                    <label for="">Event Organizer</label>
+                  </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                  <div class="form-group">
+                    <input type="checkbox">
+                    <label for="">I agree to the <a routerLink="#" style="color:black">Terms & Conditions</a> of QNature</label><br>
+                  </div>
+          </div>
+        </div>
+      <!-- button -->
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <br><br><br>
+            <input type="submit" value="CHECKOUT" class="btn col-sm-3" style="background-color: #177996;color: blanchedalmond;height: 50px;font-size: 25px;">
+          </div>
+         </div>
+      </div>
+      <!-- button -->
+      </form>
+
+    </div>
+  </div>
+
+<!-- <footer></footer> -->
+<app-footer></app-footer>

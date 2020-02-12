@@ -1,0 +1,54 @@
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* color: blueviolet; */
+}
+
+.formbody{
+    display: flex;
+    width: 290px;
+    min-height: 200px;
+    background-color: aquamarine;
+    box-shadow:0 5px 10px 0px rgba(0, 0, 0, 0.1);
+
+    border-radius: 10px;
+    padding: 25px;
+  
+}
+
+
+  .header{
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color: blue ;     
+  }
+
+input{ 
+    font-size: 0.75rem;
+    color: firebrick;
+}
+
+input[type=text]:focus,input[type=password]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  input[type=text]:placeholder {
+    color: #cccccc;
+  }
+  
+  
+  input[type=text].invalid-textbox,input[type=password].invalid-textbox{
+      border-bottom: 2px solid #ed5558;
+      }
+      
+      label.validation-message{
+        color:#ed5558;
+      }
+
+      .alert{
+        color:#ed5558;
+      }

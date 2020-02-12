@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+
+
+<style>
+  .module {
+    background: 
+      linear-gradient(
+        
+        rgba(253, 250, 250, 0.6),
+        
+        rgba(245, 236, 236, 0.6)
+      ),
+      url("../../assets/bgimg.jpg");
+    background-size: cover;
+    width: 100%;
+    position: relative;
+  }
+  
+  .top .row h1 {
+    color: black;
+  }
+</style>
+
+
+<div class="module top">
+  <div class="container" style="padding: 70px;">
+    <h3 class="text-center">Educational Information</h3>
+    
+    <h6>Part 1: Provide following details to list your practice/business as verified. These details will not appear in your listing.</h6>
+    <form>
+      <div class="row">
+        <div class="col">
+          <label for="">Eduaction Details*</label>
+          <input type="text" class="form-control" name="details">
+        </div>
+        <div class="col">
+          <label for="">Association</label>
+          <input type="text" class="form-control" name="association">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <label for="">Registration Number*</label>
+          <input type="number" class="form-control" name="regnumber">
+        </div>
+        <div class="col">
+          <label for="">Year of Registration</label>
+          <input type="number" class="form-control" name="yearreg">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <label for="">Registration Renewal Date*</label>
+          <input type="date" class="form-control" name="date">
+        </div>
+        <div class="col">
+          <label for="">Upload Registration Documents</label>
+          <input type="file" class="form-control" name="document">
+        </div>
+      </div>
+    </form>
+    
+    <!-- <button class="form-btn-hollow" (click)="movetootp()">OTP</button> -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <br><br><br>
+          <input type="submit" value="CHECKOUT" (click)="movetootp()" class="btn col-sm-3" style="background-color: #177996;color: blanchedalmond;height: 50px;font-size: 25px;">
+        </div>
+       </div>
+    </div>
+
+ </div>
+</div>
+
+<app-footer></app-footer>
+
